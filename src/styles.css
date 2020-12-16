@@ -1,0 +1,61 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+div {
+  display: flex;
+  justify-content: center;
+}
+button {
+  margin: 10px;
+  width: 100px;
+  height: 30px;
+  font-size: large;
+  border: 3px solid grey;
+  border-radius: 30px;
+  outline: none;
+  transition: transform 100ms ease-in-out;
+}
+button:hover {
+  background-color: tomato;
+  transform: scale(1.2);
+}
+.timer {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px 0px;
+  width: 600px;
+  display: flex;
+  justify-content: space-between;
+}
+.field {
+  width: 90px;
+  height: 90px;
+  display: flex;
+  flex-flow: column;
+  padding: 15px 15px 5px 15px;
+  border: 2px solid black;
+  border-radius: 20px;
+}
+.value {
+  margin-bottom: 10px;
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.label {
+  font-size: 20px;
+  display: block;
+  text-align: center;
+}
+.input {
+  margin: 20px;
+  text-align: center;
+}
