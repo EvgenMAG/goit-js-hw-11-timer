@@ -11,16 +11,15 @@ class CountdownTimer {
 
   count() {
     let timeDif = new Date(this.targetDate) - Date.now();
-    let x = this.setTime(timeDif);
+    let timer = this.onCreateTime(timeDif);
 
-    refs.days.textContent = x.days;
-    refs.hours.textContent = x.hours;
-    refs.minutes.textContent = x.mins;
-    refs.seconds.textContent = x.secs;
+    refs.days.textContent = timer.days;
+    refs.hours.textContent = timer.hours;
+    refs.minutes.textContent = timer.mins;
+    refs.seconds.textContent = timer.secs;
   }
 
-  setTime(time) {
-    // console.log(time);
+  onCreateTime(time) {
     const days = Math.floor(time / (1000 * 60 * 60 * 24));
     const hours = Math.floor((time % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     const mins = Math.floor((time % (1000 * 60 * 60)) / (1000 * 60));
@@ -60,8 +59,6 @@ const timer = new CountdownTimer({
   selector: '#timer-1',
   targetDate: new Date('2021-04-10'),
 });
-
-// console.log(timer);
 
 refs.start.addEventListener('click', () => {
   timer.targetDate = refs.input.value;
