@@ -10,8 +10,8 @@ class CountdownTimer {
   }
 
   count() {
-    let timeDif = new Date(this.targetDate) - Date.now();
-    let timer = this.onCreateTime(timeDif);
+    const timeDif = new Date(this.targetDate) - Date.now();
+    const timer = this.getCretedTime(timeDif);
 
     refs.days.textContent = timer.days;
     refs.hours.textContent = timer.hours;
@@ -19,7 +19,7 @@ class CountdownTimer {
     refs.seconds.textContent = timer.secs;
   }
 
-  onCreateTime(time) {
+  getCretedTime(time) {
     const days = Math.floor(time / (1000 * 60 * 60 * 24));
     const hours = Math.floor((time % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     const mins = Math.floor((time % (1000 * 60 * 60)) / (1000 * 60));
